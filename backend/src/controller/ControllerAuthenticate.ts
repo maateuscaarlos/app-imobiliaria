@@ -23,7 +23,7 @@ class AuthenticateController{
 
       if(!isValidPassword) return res.sendStatus(401);
 
-      const token = jwt.sign({id:userProprietor.id,name:userProprietor.name},auth.jwt.secret,{expiresIn:'1d'});
+      const token = jwt.sign({id:userProprietor.id,name:userProprietor.name},auth.jwt.secret,{expiresIn:'2d'});
            
       return res.json({
         userProprietor,

@@ -40,7 +40,7 @@ const paramsId =  route.params as ParamsId;
 const [propertie, setPropertie] = useState<Propertie>();
 
 useEffect(()=>{
-  api.get(`properties/${paramsId.id}`).then(response =>{
+  api.get(`Propertie/${paramsId.id}`).then(response =>{
     setPropertie(response.data);
   })
 },[paramsId.id]);
@@ -65,9 +65,9 @@ function handlerOpenGoogleMapsRoute(){
                     })}
                 </ScrollView>
            </View>
+           <Text style={styles.title}>{propertie.name}</Text>
+          <Text style={styles.description}>{propertie.about}</Text>
            <View style={styles.mapContainer}>
-              <Text style={styles.description}>{propertie.name}</Text>
-               <Text style={styles.description}>{propertie.about}</Text>
                 <View style={styles.mapContainer}>
                <MapView
                 initialRegion={
@@ -121,22 +121,22 @@ const styles = StyleSheet.create({
         color: "#4d6f80",
         fontSize: 30,
         fontFamily: "Nunito_700Bold",
-        textAlign:'center'
+        textAlign:'left',
+        left:20
+        
       },
       description: {
         fontFamily: "Nunito_600SemiBold",
         color: "#5c8599",
         lineHeight: 24,
         marginTop: 16,
-        textAlign:'center'
+        textAlign:'left',
+        left:20
       },
       mapContainer: {
         borderRadius: 20,
         overflow: "hidden",
-        borderWidth: 1.2,
-        borderColor: "#b3dae2",
         marginTop: 40,
-        backgroundColor: "#e6f7fb",
       },
       map: {
         width: "100%",

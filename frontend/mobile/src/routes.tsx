@@ -8,6 +8,7 @@ import PropertieMap from './pages/PropertieMap';
 import PropertieDetails from './pages/PropertieDetails';
 import PropertieData from './pages/createPoster/PropertieData';
 import PropertieSelectMap from './pages/createPoster/PropertieSelectMap';
+import Login from './pages/Login';
 
 
 
@@ -25,7 +26,7 @@ const Routes: React.FC = () =>{
                 component={PropertieDetails}
                 options={{
                     headerShown:true,
-                    header:()=> <Header title='Propertie' showX={false} />
+                    header:()=> <Header title='Imóvel' showX={false} />
                 }}
                 />
                 <Screen 

@@ -48,7 +48,7 @@ const PropertieDetails: React.FC = () =>{
 
         console.log(data)
 
-        await api.post('properties', data);
+        await api.post('Propertie', data);
         navigation.navigate('PropertieMap')
     }
 
@@ -86,7 +86,7 @@ const PropertieDetails: React.FC = () =>{
             onChangeText={text=>setName(text)}
             />
             
-            <Text style={styles.label}>Sobre</Text>
+            <Text style={styles.label}>Sobre</Text><Text style={styles.labelLimite}>Máximo de 300 caracteres</Text>
             <TextInput 
             multiline 
             style={[styles.input,{height:110}]}
@@ -110,7 +110,7 @@ const PropertieDetails: React.FC = () =>{
             <TouchableOpacity style={styles.imagesInput} onPress={handlerSelectImages}>
                 <Feather name='plus'size={24}color="#15B6D6" />
             </TouchableOpacity>
-            
+            <Text style={styles.title}>Instruções para compra e aluguel</Text>
             <Text style={styles.label}>Instruções</Text>
             <TextInput 
             multiline 
@@ -146,6 +146,11 @@ const styles = StyleSheet.create({
         fontFamily:'Nunito_600SemiBold',
         marginBottom:8,
     },
+    labelLimite:{
+        color:'#8fa7b3',
+        fontFamily:'Nunito_600SemiBold',
+        fontSize: 10
+    },
     input:{
         backgroundColor:'#fff',
         borderWidth:1.4,
@@ -175,7 +180,7 @@ const styles = StyleSheet.create({
         marginTop:16,
     },
     nextButton:{
-        backgroundColor:'#15c3d6',
+        backgroundColor:'#15C3D6',
         borderRadius:20,
         justifyContent:'center',
         alignItems:'center',

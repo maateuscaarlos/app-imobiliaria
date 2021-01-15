@@ -22,7 +22,8 @@ const ControllerPropertie = {
       },
       async create(request:Request, response:Response):Promise<Propertie | any>{
 
-        const {name, latitude,longitude,about,instructions,userPropriertor_id} = request.body;
+        const {name, latitude,longitude,about,instructions} = request.body;
+        const userPropriertor_id = 1;
         console.log(name, latitude,longitude,about,instructions,userPropriertor_id);
 
         const propertieRepository = getRepository(Propertie);
@@ -62,7 +63,6 @@ const ControllerPropertie = {
 
         const properties = propertieRepository.create(dataPropertie);
         console.log(properties);
-        console.log(typeof dataPropertie.latitude === 'number');
         await propertieRepository.save(properties);
 
         

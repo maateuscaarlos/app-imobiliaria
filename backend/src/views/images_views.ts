@@ -12,7 +12,7 @@ export default{
       url:`http:192.168.2.12:3333/upload/${image.path}`,//192.168.1.10:3333
     };
   },
-  renderMany(images:Images[]):ImagesView[]{
-    return images.map(image=>this.render(image));
+     renderMany(images:Images[]):ImagesView[]{
+      return images.map(image=> this.render(image));
   }
 }
